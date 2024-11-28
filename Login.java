@@ -52,32 +52,23 @@ public class Login extends JFrame{
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-
-        try {
-            latch.await(); // Wait until latch.countDown() is called
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
-        }
-
-        latch.countDown();
-
     }
 
     private class EnterButtonListener implements ActionListener{
         public void actionPerformed(ActionEvent e){
-            String delete = IDnumber.getText();
+            String password = IDnumber.getText();
             
-        
-            
-            if(delete.replace(" ","").isEmpty()){
+            if(password.replace(" ","").isEmpty()){
                 JOptionPane.showMessageDialog(null, "Password field is empty");
                 return;
             }
             
-            if(!(delete.equals("123"))){
+            if(!(password.equals("THallSecurity123"))){
                 JOptionPane.showMessageDialog(null, "Wrong Passwrod");
                 return;
             }
+            frame.dispose();
+            new StudentMain();
             
 
             

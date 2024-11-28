@@ -75,14 +75,13 @@ public class StudentMain extends JFrame{
 
         studentFrame.pack();
         studentFrame.setLocationRelativeTo(null);
-
-        new Login();
         studentFrame.setVisible(true);
 
     }
 
     public static void main(String[] args) {
-        new StudentMain();
+
+        new Login();
     }
 
     private class AddStudentButtonListener implements ActionListener{
