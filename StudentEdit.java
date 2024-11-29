@@ -32,9 +32,6 @@ public class StudentEdit {
         eID = new JTextField(15);
         pnlPrompt.add(eID);
 
-        cmdEdit      = new JButton("Edit");
-        pnlPrompt.add(cmdEdit);
-
 
 
         pnlDisplay.add(new JLabel("First Name:")); 
@@ -92,7 +89,7 @@ public class StudentEdit {
                     return;
                 }
 
-
+                int IDcount = 0;
                 try {
                     Scanner scanner = new Scanner(new File("student.txt"));
 
@@ -102,8 +99,11 @@ public class StudentEdit {
                         
 
                         if (s.getID().equals(ID.toUpperCase())){
-                            JOptionPane.showMessageDialog(null, "This ID number has already been added");
-                            return;
+                            if(!(s.getfName().equals(fName.toUpperCase()))){
+                                JOptionPane.showMessageDialog(null, "This ID number has already registered for another student");
+                                return;
+                            }
+                            
                         }
                     }
 

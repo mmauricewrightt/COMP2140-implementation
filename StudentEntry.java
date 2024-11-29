@@ -118,6 +118,7 @@ public class StudentEntry{
 
                 } catch (Exception p) {
                     JOptionPane.showMessageDialog(null, "Unseccessful Entry");
+                    frame.dispose();
                     // TODO: handle exception
                 }
             }
